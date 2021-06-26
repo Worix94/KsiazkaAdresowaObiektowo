@@ -1,0 +1,5 @@
+1|1|Maciek|Pietrzak|123456|Wola|Macko123@o2.pl|
+2|2|Wojciech|Maroszek|1234567|Zory|Wojti123@o2.pl|
+3|1|Grzesiek|Kawa|12345678|Rzeszow|Grzechu123@o2.pl|
+5|1|Krzysiek|Ibisz|12355|Warszawa|Krzychu123@o2.pl|
+7|2|Krzysiek|Maˆecki|123456|Wolka wolanka|Krzychu123@o2.pl|

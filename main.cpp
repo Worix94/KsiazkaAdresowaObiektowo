@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     char wybor;
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
     while (true)
     {
         if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0)
@@ -32,6 +32,13 @@ int main()
         }
         else
         {
+            if ((ksiazkaAdresowa.pobierzAdresatowUzytkownika()).empty() == true)
+                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
+                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
+                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
+                {
+                ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownika(ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika());
+                }
             wybor = MetodyPomocnicze::wybierzOpcjeZMenuUzytkownika();
             switch (wybor)
             {
