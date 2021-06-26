@@ -19,6 +19,8 @@ public:
     static char wybierzOpcjeZMenuGlownego();
     static char wybierzOpcjeZMenuUzytkownika();
     static char wczytajZnak();
+    static string pobierzLiczbe(string tekst, int pozycjaZnaku);
+    static int konwersjaStringNaInt(string liczba);
 };
 
 #endif
