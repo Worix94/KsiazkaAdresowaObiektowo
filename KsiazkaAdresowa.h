@@ -22,11 +22,12 @@ public:
     int pobierzIdZalogowanegoUzytkownika();
     void ustawIdZalogowanegoUzytkownika(int id);
     void zmianaHaslaZalogowanegoUzytkownika();
-    void wczytajAdresatowZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+    int wczytajAdresatowZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
     int pobierzIdOstatniegoAdresata();
     vector<Adresat> pobierzAdresatowUzytkownika();
     void wyswietlWszystkichAdresatowUzytkownika();
     void czyszczenieAdresatow();
+    int dodajAdresata(int idOstatniegoAdresata,int idZalogowanegoUzytkownika);
 
 };
 #endif

@@ -6,6 +6,7 @@ using namespace std;
 int main()
 {
     char wybor;
+    int idOstatniegoAdresata;
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
     while (true)
     {
@@ -37,13 +38,13 @@ int main()
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
                 {
-                ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownika(ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika());
+                idOstatniegoAdresata=ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownika(ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika());
                 }
             wybor = MetodyPomocnicze::wybierzOpcjeZMenuUzytkownika();
             switch (wybor)
             {
             case '1':
-                //idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                idOstatniegoAdresata=ksiazkaAdresowa.dodajAdresata(idOstatniegoAdresata,ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika());
                 break;
             case '2':
                 //wyszukajAdresatowPoImieniu(adresaci);

@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
@@ -24,5 +25,9 @@ public:
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata(Adresat adresat);
     void czyszczenieAdresatow();
+    int dodajAdresata(int idOstatniegoAdresata,int idZalogowanegoUzytkownika);
+    Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata,int idZalogowanegoUzytkownika);
+    void dopiszAdresataDoPliku(Adresat adresat);
+
 
 };
