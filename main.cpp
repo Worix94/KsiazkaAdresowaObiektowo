@@ -52,7 +52,7 @@ int main()
                 //wyszukajAdresatowPoNazwisku(adresaci);
                 break;
             case '4':
-                //wyswietlWszystkichAdresatow(adresaci);
+                ksiazkaAdresowa.wyswietlWszystkichAdresatowUzytkownika();
                 break;
             case '5':
                 //idUsunietegoAdresata = usunAdresata(adresaci);
@@ -66,7 +66,7 @@ int main()
                 break;
             case '8':
                 ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
-                //adresaci.clear();
+                ksiazkaAdresowa.czyszczenieAdresatow();
                 break;
             }
         }

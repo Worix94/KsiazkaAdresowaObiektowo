@@ -45,3 +45,13 @@ vector<Adresat> KsiazkaAdresowa::pobierzAdresatowUzytkownika()
 {
     return adresatMenedzer.pobierzAdresatowUzytkownika();
 }
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatowUzytkownika()
+{
+    adresatMenedzer.wyswietlWszystkichAdresatow();
+}
+
+void KsiazkaAdresowa::czyszczenieAdresatow()
+{
+    adresatMenedzer.czyszczenieAdresatow();
+}

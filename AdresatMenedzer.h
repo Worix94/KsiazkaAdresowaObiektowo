@@ -21,5 +21,8 @@ public:
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdOstatniegoAdresata();
     vector<Adresat> pobierzAdresatowUzytkownika();
+    void wyswietlWszystkichAdresatow();
+    void wyswietlDaneAdresata(Adresat adresat);
+    void czyszczenieAdresatow();
 
 };
