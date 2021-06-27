@@ -11,6 +11,7 @@ using namespace std;
 int AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
     idOstatniegoAdresata=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci,idZalogowanegoUzytkownika);
+    return idOstatniegoAdresata;
 }
 
 int AdresatMenedzer::pobierzIdOstatniegoAdresata()
@@ -56,6 +57,52 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
 void AdresatMenedzer::czyszczenieAdresatow()
 {
     adresaci.clear();
+}
+
+Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idOstatniegoAdresata,int idZalogowanegoUzytkownika)
+{
+    Adresat adresat;
+    adresat.ustawId(++idOstatniegoAdresata);
+    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+
+    cout << "Podaj imie: ";
+    adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
+    adresat.pobierzImie() = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzImie());
+
+    cout << "Podaj nazwisko: ";
+    adresat.ustawNazwisko(MetodyPomocnicze::wczytajLinie());
+    adresat.pobierzNazwisko() = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzNazwisko());
+
+    cout << "Podaj numer telefonu: ";
+    adresat.ustawNumerTelefonu(MetodyPomocnicze::wczytajLinie());
+
+    cout << "Podaj email: ";
+    adresat.ustawEmail(MetodyPomocnicze::wczytajLinie());
+
+    cout << "Podaj adres: ";
+    adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
+
+    return adresat;
+}
+
+int AdresatMenedzer::dodajAdresata(int idOstatniegoAdresata,int idZalogowanegoUzytkownika)
+{
+    Adresat adresat;
+    system("cls");
+
+    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
+    adresat = podajDaneNowegoAdresata(idOstatniegoAdresata,idZalogowanegoUzytkownika);
+    cout<<adresat.pobierzId()<<endl;
+    system("pause");
+    adresaci.push_back(adresat);
+    dopiszAdresataDoPliku(adresat);
+
+    return ++idOstatniegoAdresata;
+}
+
+void AdresatMenedzer::dopiszAdresataDoPliku(Adresat adresat)
+{
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
 }
 
 
