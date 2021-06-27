@@ -28,6 +28,4 @@ public:
     int dodajAdresata(int idOstatniegoAdresata,int idZalogowanegoUzytkownika);
     Adresat podajDaneNowegoAdresata(int idOstatniegoAdresata,int idZalogowanegoUzytkownika);
     void dopiszAdresataDoPliku(Adresat adresat);
-
-
 };
