@@ -33,18 +33,11 @@ int main()
         }
         else
         {
-            if ((ksiazkaAdresowa.pobierzAdresatowUzytkownika()).empty() == true)
-                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
-                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
-                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                {
-                idOstatniegoAdresata=ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownika(ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika());
-                }
             wybor = MetodyPomocnicze::wybierzOpcjeZMenuUzytkownika();
             switch (wybor)
             {
             case '1':
-                idOstatniegoAdresata=ksiazkaAdresowa.dodajAdresata(idOstatniegoAdresata,ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika());
+                ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
                 //wyszukajAdresatowPoImieniu(adresaci);
@@ -66,8 +59,7 @@ int main()
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
-                ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
-                ksiazkaAdresowa.czyszczenieAdresatow();
+                ksiazkaAdresowa.wylogowanieUzytkownika();
                 break;
             }
         }
