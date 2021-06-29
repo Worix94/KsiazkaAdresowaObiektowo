@@ -11,23 +11,27 @@ using namespace std;
 class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
-    AdresatMenedzer adresatMenedzer;
+    AdresatMenedzer *adresatMenedzer;
+    const string NAZWA_PLIKU_Z_ADRESATAMI;
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami):uzytkownikMenedzer(nazwaPlikuZUzytkownikami),adresatMenedzer(nazwaPlikuZAdresatami)
-    {uzytkownikMenedzer.wczytajUzytkownikowZPliku();
-    uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(0);};
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami):uzytkownikMenedzer(nazwaPlikuZUzytkownikami),NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+    {adresatMenedzer=NULL;};
+
+    ~KsiazkaAdresowa(){
+    delete adresatMenedzer;
+    adresatMenedzer=NULL;
+    };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
     void ustawIdZalogowanegoUzytkownika(int id);
     void zmianaHaslaZalogowanegoUzytkownika();
-    int wczytajAdresatowZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
     int pobierzIdOstatniegoAdresata();
     vector<Adresat> pobierzAdresatowUzytkownika();
     void wyswietlWszystkichAdresatowUzytkownika();
-    void czyszczenieAdresatow();
-    int dodajAdresata(int idOstatniegoAdresata,int idZalogowanegoUzytkownika);
+    void dodajAdresata();
+    void wylogowanieUzytkownika();
 
 };
 #endif

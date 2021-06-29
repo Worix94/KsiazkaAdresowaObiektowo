@@ -1,11 +1,6 @@
 #include "UzytkownikMenedzer.h"
 
 
-void UzytkownikMenedzer::ustawIdZalogowanegoUzytkownika(int noweID)
-{
-        idZalogowanegoUzytkownika=noweID;
-    }
-
 int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 {
         return idZalogowanegoUzytkownika;
@@ -75,11 +70,6 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy=plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
@@ -102,7 +92,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> pobierzId();
+                    idZalogowanegoUzytkownika=itr -> pobierzId();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -132,4 +123,15 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
+void UzytkownikMenedzer::wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika=0;
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
+{
+    if(idZalogowanegoUzytkownika>0) return true;
+    else return false;
 }
