@@ -9,15 +9,6 @@
 using namespace std;
 
 
-int AdresatMenedzer::pobierzIdOstatniegoAdresata()
-{
-    plikZAdresatami.pobierzIdOstatniegoAdresata();
-}
-
-vector<Adresat> AdresatMenedzer::pobierzAdresatowUzytkownika()
-{
-    return adresaci;
-}
 
 void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
 {
@@ -82,16 +73,19 @@ void AdresatMenedzer::dodajAdresata()
 
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
     adresat = podajDaneNowegoAdresata();
-    cout<<adresat.pobierzId()<<endl;
-    system("pause");
     adresaci.push_back(adresat);
-    dopiszAdresataDoPliku(adresat);
+    if(plikZAdresatami.dopiszAdresataDoPliku(adresat))
+    {
+        cout<<"Adresat zostal dodany"<<endl;
+        Sleep(1500);
+    }
+    else
+    {
+        cout<<"Nie udalo sie dodac adresata"<<endl;
+        Sleep(1500);
+    }
 }
 
-void AdresatMenedzer::dopiszAdresataDoPliku(Adresat adresat)
-{
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-}
 
 
 
