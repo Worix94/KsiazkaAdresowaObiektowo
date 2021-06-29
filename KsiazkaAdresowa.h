@@ -25,13 +25,11 @@ public:
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
-    void ustawIdZalogowanegoUzytkownika(int id);
     void zmianaHaslaZalogowanegoUzytkownika();
-    int pobierzIdOstatniegoAdresata();
-    vector<Adresat> pobierzAdresatowUzytkownika();
     void wyswietlWszystkichAdresatowUzytkownika();
     void dodajAdresata();
     void wylogowanieUzytkownika();
+    bool czyUzytkownikJestZalogowany();
 
 };
 #endif

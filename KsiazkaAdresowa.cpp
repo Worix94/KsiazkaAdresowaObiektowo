@@ -30,16 +30,6 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
-int KsiazkaAdresowa::pobierzIdOstatniegoAdresata()
-{
-    return adresatMenedzer -> pobierzIdOstatniegoAdresata();
-}
-
-vector<Adresat> KsiazkaAdresowa::pobierzAdresatowUzytkownika()
-{
-    return adresatMenedzer ->pobierzAdresatowUzytkownika();
-}
-
 void KsiazkaAdresowa::wyswietlWszystkichAdresatowUzytkownika()
 {
     adresatMenedzer -> wyswietlWszystkichAdresatow();
@@ -56,4 +46,10 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
     uzytkownikMenedzer.wylogowanieUzytkownika();
     delete adresatMenedzer;
     adresatMenedzer=NULL;
+}
+
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany()) return true;
+    else return false;
 }

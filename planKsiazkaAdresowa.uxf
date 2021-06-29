@@ -7,7 +7,7 @@
       <x>0</x>
       <y>20</y>
       <w>350</w>
-      <h>250</h>
+      <h>260</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -18,14 +18,12 @@ KsiazkaAdresowa();
 + wypiszWszystkochUzytkownikow(): void
 + logowanieUzytkownika():Integer
 + pobierzIdZalogowanegoUzytkownika():int 
-+ ustawIdZalogowanegoUzytkownika():void
 + zmianaHaslaZalogowanegoUzytkownika():void
 + wczytajAdresatowZalogowanegoUzytkownika(int idZalogowanegoUzytkownika):void
-+ pobierzIdOstatniegoAdresata(): Int
-+ pobierzAdresatowUzytkownika(): vector&lt;Adresat&gt; 
 + wyswietlWszystkichAdresatowUzytkownika():void
-+ czyszczenieAdresatow(): void
 + dodajAdresata(int idOstatniegoAdresata,int idZalogowanegoUzytkownika): int
++ wylogowanieUzytkownika(): void
++ czyUzytkownikJestZalogowany()L bool
 
 </panel_attributes>
     <additional_attributes/>
@@ -58,16 +56,14 @@ KsiazkaAdresowa();
 - idZalogowanegoUzytkownika:Integer
 - uzytkownicy : vector &lt;Uzytkownik&gt;
 --
+UzytkownikMenedzer();
 + rejestracjaUzytkownika(): void
 + logowanieUzytkownika(): Integer
-+ wczytajUzytkownikowZPliku():void
 + wypiszWszystkochUzytkownikow(): void
 - podajDaneNowegoUzytkownika():Uzytkownik
 - pobierzIdNowegoUzytkownika():Integer
 - czyIstniejeLogin():bool
-- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami():string
 + logowanieUzytkownika():Integer
-+ ustawIdZalogowanegoUzytkownika(): void
 + pobierzIdZalogowanegoUzytkownika(): int
 + zmianaHaslaZalogowanegoUzytkownika():void</panel_attributes>
     <additional_attributes/>
@@ -85,11 +81,14 @@ KsiazkaAdresowa();
 - nazwaPlikuZUzytkownikami:String
 - fstream:plikTekstowy
 --
-+ PlikZUzytkownikami()
+PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku():void
 - czyPlikJestPusty():bool
 + wczytajUzytkownikowZPliku():void
-+ zapiszWszystkichUzytkownikowDoPliku(): void</panel_attributes>
++ zapiszWszystkichUzytkownikowDoPliku(): void
+- pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami): Uzytkownik
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik): string 
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -130,7 +129,9 @@ KsiazkaAdresowa();
 - nazwisko: string
 - numerTelefonu: string
 - email: string
-- adres: string</panel_attributes>
+- adres: string
+--
+Adresat();</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -147,14 +148,11 @@ KsiazkaAdresowa();
 - adresaci: vector &lt;Adresat&gt;
 --
 AdresatMenedzer();
-+ wczytajAdresatow(): void
-+ pobierzIdOstatniegoAdresata(): Int
-+ pobierzAdresatowUzytkownika(): vector&lt;Adresat&gt; 
 + wyswietlWszystkichAdresatow():void
-+ wyswietlDaneAdresata(Adresat adresat):void
-+ czyszczenieAdresatow():void
+- wyswietlDaneAdresata(Adresat adresat):void
 + dodajAdresata(int idOstatniegoAdresata,int idZalogowanegoUzytkownika):Int
-+ dopiszAdresataDoPliku(Adresat adresat): void
+- podajDaneNowegoAdresata() Adresat 
+
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -174,11 +172,11 @@ AdresatMenedzer();
 PlikZAdresatami();
 - czyPlikJestPusty():bool
 + wczytajAdresatowZPlik():void
-+ pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami): Int
-+ pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami):Int
-+ pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami):Adresat
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami): Int
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami):Int
+- pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami):Adresat
 + dopiszAdresataDoPliku(Adresat adresat): void
-+ zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat):string</panel_attributes>
+- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat):string</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

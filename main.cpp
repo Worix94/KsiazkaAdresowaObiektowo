@@ -56,14 +56,13 @@ int main()
                 //edytujAdresata(adresaci);
                 break;
             case '7':
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
                 ksiazkaAdresowa.wylogowanieUzytkownika();
                 break;
             }
         }
-
     }
     return 0;
 }
