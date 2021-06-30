@@ -8,31 +8,30 @@
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
 #include "PlikZAdresatami.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
-class PlikZAdresatami
-{
-    const string nazwaPlikuZAdresatami;
+class PlikZAdresatami : public PlikTekstowy{
     Adresat adresat;
     int idOstatniegoAdresata;
+    string nazwaPlikuZAdresatami;
 
-    bool czyPlikJestPusty(fstream &plikTekstowy);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
-    void AktualizujPlikPoUsunieciu(vector<Adresat> adresaci,int IsUsunietegoAdresata);
+    void AktualizujPlikPoUsunieciu(vector<Adresat> &adresaci,int idUsunietegoAdresata);
     int podajIdWybranegoAdresata();
     void AktualizujPlikPoEdytowaniu(Adresat adresat);
 public:
-    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI){};
+    PlikZAdresatami(string nazwaPliku) : PlikTekstowy(nazwaPliku) {nazwaPlikuZAdresatami=pobierzNazwePliku();};
     bool dopiszAdresataDoPliku(Adresat adresat);
     int pobierzIdOstatniegoAdresata();
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void usunAdresata(vector <Adresat> &adresaci);
-    bool czyPlikZAdresatamiJestPusty();
     void edytujAdresata(vector <Adresat> &adresaci);
+    void AktualizujIdOstaniegoAdresata(vector<Adresat> &adresaci);
 };
 
 #endif

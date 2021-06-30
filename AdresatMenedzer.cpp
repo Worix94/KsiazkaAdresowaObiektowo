@@ -43,7 +43,7 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
 Adresat AdresatMenedzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
-    if(plikZAdresatami.czyPlikZAdresatamiJestPusty()==true){adresat.ustawId(1);}
+    if(plikZAdresatami.czyPlikJestPusty()==true){adresat.ustawId(1);}
     else {adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);}
     adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
@@ -75,6 +75,7 @@ void AdresatMenedzer::dodajAdresata()
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
     adresat = podajDaneNowegoAdresata();
     adresaci.push_back(adresat);
+
     if(plikZAdresatami.dopiszAdresataDoPliku(adresat))
     {
         cout<<"Adresat zostal dodany"<<endl;
@@ -85,6 +86,7 @@ void AdresatMenedzer::dodajAdresata()
         cout<<"Nie udalo sie dodac adresata"<<endl;
         Sleep(1500);
     }
+    plikZAdresatami.AktualizujIdOstaniegoAdresata(adresaci);
 }
 
 void AdresatMenedzer::usunAdresata()
