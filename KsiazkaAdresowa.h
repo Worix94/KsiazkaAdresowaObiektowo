@@ -30,6 +30,8 @@ public:
     void dodajAdresata();
     void wylogowanieUzytkownika();
     bool czyUzytkownikJestZalogowany();
+    void usunAdresata();
+    void edytujAdresata();
 
 };
 #endif

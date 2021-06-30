@@ -53,3 +53,13 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
     if(uzytkownikMenedzer.czyUzytkownikJestZalogowany()) return true;
     else return false;
 }
+
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenedzer -> usunAdresata();
+}
+
+void KsiazkaAdresowa::edytujAdresata()
+{
+    adresatMenedzer -> edytujAdresata();
+}

@@ -43,8 +43,8 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
 Adresat AdresatMenedzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
-    if(adresaci.empty())adresat.ustawId(1);
-    else adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);
+    if(plikZAdresatami.czyPlikZAdresatamiJestPusty()==true){adresat.ustawId(1);}
+    else {adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);}
     adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
@@ -85,6 +85,16 @@ void AdresatMenedzer::dodajAdresata()
         cout<<"Nie udalo sie dodac adresata"<<endl;
         Sleep(1500);
     }
+}
+
+void AdresatMenedzer::usunAdresata()
+{
+    plikZAdresatami.usunAdresata(adresaci);
+}
+
+void AdresatMenedzer::edytujAdresata()
+{
+    plikZAdresatami.edytujAdresata(adresaci);
 }
 
 
