@@ -43,7 +43,8 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
 Adresat AdresatMenedzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
-    adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);
+    if(adresaci.empty())adresat.ustawId(1);
+    else adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);
     adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
