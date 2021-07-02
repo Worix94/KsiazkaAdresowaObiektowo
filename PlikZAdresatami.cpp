@@ -180,7 +180,7 @@ int PlikZAdresatami::podajIdWybranegoAdresata() {
     return idWybranegoAdresata;
 }
 
-void PlikZAdresatami::AktualizujIdOstaniegoAdresata(vector<Adresat> &adresaci) {
+void PlikZAdresatami::AktualizujIdOstaniegoAdresata() {
     int idOstatniegoAdresata = 0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
@@ -202,7 +202,6 @@ void PlikZAdresatami::AktualizujIdOstaniegoAdresata(vector<Adresat> &adresaci) {
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
     }
 }
-
 
 void PlikZAdresatami::usunAdresata(vector <Adresat> &adresaci) {
     int idUsuwanegoAdresata = 0;
@@ -231,7 +230,7 @@ void PlikZAdresatami::usunAdresata(vector <Adresat> &adresaci) {
             }
         }
     }
-    AktualizujIdOstaniegoAdresata(adresaci);
+    AktualizujIdOstaniegoAdresata();
     if (czyIstniejeAdresat == false) {
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");

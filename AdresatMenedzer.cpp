@@ -86,7 +86,6 @@ void AdresatMenedzer::dodajAdresata()
         cout<<"Nie udalo sie dodac adresata"<<endl;
         Sleep(1500);
     }
-    plikZAdresatami.AktualizujIdOstaniegoAdresata(adresaci);
 }
 
 void AdresatMenedzer::usunAdresata()
