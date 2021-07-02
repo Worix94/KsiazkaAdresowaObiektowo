@@ -8,8 +8,9 @@ string PlikTekstowy::pobierzNazwePliku()
 
 bool PlikTekstowy::czyPlikJestPusty()
 {
-        bool pusty = true;
         fstream plikTekstowy;
+        bool pusty = true;
+
         plikTekstowy.open(pobierzNazwePliku().c_str(), ios::app);
 
         if (plikTekstowy.good() == true)

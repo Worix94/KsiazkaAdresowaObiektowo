@@ -16,10 +16,10 @@ class UzytkownikMenedzer
 {
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
+    PlikZUzytkownikami plikZUzytkownikami;
 
     Uzytkownik podajDaneNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
-    PlikZUzytkownikami plikZUzytkownikami;
     int pobierzIdNowegoUzytkownika();
 
 

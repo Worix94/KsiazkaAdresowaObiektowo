@@ -1,7 +1,4 @@
-
-
-
-
-
-1|3|Mateusz|Masternak|123|123|Warszawa|
-2|3|Mario|Kobylisnki|123|Mario123@o2.pl|Wola|
+1|1|Mati|Borek|123|Mati123@o2.pl|Warszawa|
+3|2|Krzysiu|Pamula|123|Krzys123@o2.pl|Strzyzow|
+4|2|Mati|Masternak|123|Mati123@o2.pl|krakow|
+7|1|Marek|Marecki|123|Maro123@o2.pl|Rzeszow|
