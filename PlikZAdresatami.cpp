@@ -189,8 +189,9 @@ void PlikZAdresatami::AktualizujIdOstaniegoAdresata(vector<Adresat> &adresaci) {
 
     if (plikTekstowy.good() == true)
     {
-        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {}
+        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {
             daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
+        }
             plikTekstowy.close();
     }
     else

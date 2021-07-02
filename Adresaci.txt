@@ -1,4 +1,2 @@
-1|1|Mati|Borek|123|Mati123@o2.pl|Warszawa|
-3|2|Krzysiu|Pamula|123|Krzys123@o2.pl|Strzyzow|
-4|2|Mati|Masternak|123|Mati123@o2.pl|krakow|
-7|1|Marek|Marecki|123|Maro123@o2.pl|Rzeszow|
+1|4|123|123|123|123|123|
+2|4|123|12|3123|123|123|
