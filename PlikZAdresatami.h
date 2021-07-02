@@ -31,7 +31,7 @@ public:
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void usunAdresata(vector <Adresat> &adresaci);
     void edytujAdresata(vector <Adresat> &adresaci);
-    void AktualizujIdOstaniegoAdresata(vector<Adresat> &adresaci);
+    void AktualizujIdOstaniegoAdresata();
 };
 
 #endif
