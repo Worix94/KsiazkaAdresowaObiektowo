@@ -25,13 +25,13 @@ class PlikZAdresatami : public PlikTekstowy{
     int podajIdWybranegoAdresata();
     void AktualizujPlikPoEdytowaniu(Adresat adresat);
 public:
-    PlikZAdresatami(string nazwaPliku) : PlikTekstowy(nazwaPliku) {nazwaPlikuZAdresatami=pobierzNazwePliku();};
+    PlikZAdresatami(string nazwaPliku) : PlikTekstowy(nazwaPliku) {nazwaPlikuZAdresatami=pobierzNazwePliku();idOstatniegoAdresata=0;};
     bool dopiszAdresataDoPliku(Adresat adresat);
     int pobierzIdOstatniegoAdresata();
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void usunAdresata(vector <Adresat> &adresaci);
     void edytujAdresata(vector <Adresat> &adresaci);
-    void AktualizujIdOstaniegoAdresata();
+    void aktualizujIdOstaniegoAdresata();
 };
 
 #endif

@@ -1,2 +1,0 @@
-1|1|wojtek|skiba|123|wojti123@o2.pl|rzewszow|
-2|1|marcin|daniec|123|marcino123@o2.pl|Warszawa|
