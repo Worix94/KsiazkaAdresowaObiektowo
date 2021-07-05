@@ -112,8 +112,8 @@ bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat) {
         } else {
             plikTekstowy << endl << liniaZDanymiAdresata ;
         }
-        idOstatniegoAdresata++;
         plikTekstowy.close();
+        idOstatniegoAdresata++;
         return true;
     }
     return false;
@@ -181,7 +181,6 @@ int PlikZAdresatami::podajIdWybranegoAdresata() {
 }
 
 void PlikZAdresatami::AktualizujIdOstaniegoAdresata() {
-    int idOstatniegoAdresata = 0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
@@ -219,8 +218,8 @@ void PlikZAdresatami::usunAdresata(vector <Adresat> &adresaci) {
             cout << endl << "Potwierdz naciskajac klawisz 't': ";
             znak = MetodyPomocnicze::wczytajZnak();
             if (znak == 't') {
-                AktualizujPlikPoUsunieciu(adresaci,idUsuwanegoAdresata);
                 adresaci.erase(itr);
+                AktualizujPlikPoUsunieciu(adresaci,idUsuwanegoAdresata);
                 itr--;
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
